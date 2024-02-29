@@ -1,0 +1,2 @@
+# auth initgit add README.mdgit commit -m first commitgit branch -M maingit remote add origin git@github.com:Salman-TCM/auth.gitgit push -u origin main
+# auth initgit add README.mdgit commit -m first commitgit branch -M maingit remote add origin git@github.com:Salman-TCM/auth.gitgit push -u origin main
