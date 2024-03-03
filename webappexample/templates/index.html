@@ -1,16 +1,55 @@
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Auth0 Example</title>
+    <title>NTMC</title>
+    <style>
+      .card {
+        width: 500px;
+        margin: auto;
+        margin-top: 50px;
+        padding: 20px;
+        text-align: center;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+      }
+
+      .logo {
+        width: 100px;
+        height: auto;
+        margin-bottom: 20px;
+      }
+      
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-top: 10px;
+        background-color: #0C1427; /* Green */
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      .button:hover {
+        background-color: #1b2e57; /* Darker green */
+      }
+    </style>
   </head>
   <body>
-    {% if session %}
-    <h1>Welcome {{session.userinfo.name}}!</h1>
-    <p><a href="{% url 'logout' %}" id="qsLogoutBtn">Logout</a></p>
-    <div><pre>{{pretty}}</pre></div>
-    {% else %}
-    <h1 id="profileDropDown">Welcome Guest</h1>
-    <p><a href="{% url 'login' %}" id="qsLoginBtn">Login</a></p>
-    {% endif %}
+    <div class="card">
+      <img src="https://play-lh.googleusercontent.com/-Fwjwm-w8ampBrw09XztlCqjgIHJ9g18bgRWNEwc7umMtWvYpRMwjaof_j7M2kyIgQ" alt="Logo" class="logo">
+      {% if session %}
+      <h1>Welcome to NTMC {{session.userinfo.name}}!</h1>
+      <p><a class="button" href="{% url 'logout' %}" id="qsLogoutBtn">Logout</a></p>
+      <div><pre>{{pretty}}</pre></div>
+      {% else %}
+{#      <h1 id="profileDropDown">Welcome</h1>#}
+      <p><a class="button" href="{% url 'login' %}" id="qsLoginBtn">Login</a></p>
+      {% endif %}
+    </div>
   </body>
 </html>
